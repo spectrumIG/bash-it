@@ -36,7 +36,7 @@ echo -e -n "\033[0;32mWould you like to keep your $CONFIG_FILE and append bash_i
 read choice
 	 case $choice in
         [yY])
-			sed "s|{{BASH_IT}}|$BASH_IT|" "$BASH_IT/template/bash_profile.template.bash" >> "$HOME/$CONFIG_FILE"
+			tail -n +2 "$BASH_IT/template/bash_profile.template.bash" >> "$HOME/$CONFIG_FILE"
 			echo -e "\033[0;32m bash_it template has correctly added to your $CONFIG_FILE\033[0m"
             ;;
         [nN]|"")
@@ -51,8 +51,6 @@ read choice
       esac
 
 echo -e "\033[0;32mCopied the template $CONFIG_FILE into ~/$CONFIG_FILE, edit this file to customize bash-it\033[0m"
-
-
 
 function load_one() {
   file_type=$1
