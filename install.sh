@@ -40,14 +40,12 @@ read choice
         [yY])
 			sed "s|{{BASH_IT}}|$BASH_IT|" "$BASH_IT/template/bash_profile.template.bash" >> "$HOME/$CONFIG_FILE"
 			echo -e "\033[0;32m bash_it template has correctly added to your $CONFIG_FILE\033[0m"
-            break
             ;;
         [nN]|"")
 			test -w "$HOME/$CONFIG_FILE" &&
 		  	cp -aL "$HOME/$CONFIG_FILE" "$HOME/$CONFIG_FILE.bak" &&
 			echo -e "\033[0;32mYour original $CONFIG_FILE has been backed up to $CONFIG_FILE.bak\033[0m"
 			sed "s|{{BASH_IT}}|$BASH_IT|" "$BASH_IT/template/bash_profile.template.bash" > "$HOME/$CONFIG_FILE"
-            break
             ;;
         *)
             echo -e "\033[91mPlease choose y or n.\033[m"
