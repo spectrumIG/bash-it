@@ -49,8 +49,8 @@ read -e -n 1 -r -p "Would you like to keep your $CONFIG_FILE and append bash_it 
         *)
             echo -e "\033[91mPlease choose y or n.\033[m"
             ;;
-        esac
-    done
+      esac
+
 
 
 
