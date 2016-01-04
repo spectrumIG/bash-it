@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -x
 BASH_IT="$(cd "$(dirname "$0")" && pwd)"
 
 case $OSTYPE in
@@ -33,7 +32,6 @@ if [ -e "$HOME/$BACKUP_FILE" ]; then
     done
 fi
 
-echo -n "Before the question"
 echo -e -n "\033[0;32mWould you like to keep your $CONFIG_FILE and append bash_it templates at the end?[y/N]\033[0m "
 read choice
 	 case $choice in
@@ -51,10 +49,6 @@ read choice
             echo -e "\033[91mPlease choose y or n.\033[m"
             ;;
       esac
-
-
-
-
 
 echo -e "\033[0;32mCopied the template $CONFIG_FILE into ~/$CONFIG_FILE, edit this file to customize bash-it\033[0m"
 
