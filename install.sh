@@ -32,8 +32,10 @@ if [ -e "$HOME/$BACKUP_FILE" ]; then
         esac
     done
 fi
+
+echo -n "Before the question"
 echo -e -n "\033[0;32mWould you like to keep your $CONFIG_FILE and append bash_it templates at the end?[y/N]\033[0m "
-read -n 1 -r choice
+read choice
 	 case $choice in
         [yY])
 			sed "s|{{BASH_IT}}|$BASH_IT|" "$BASH_IT/template/bash_profile.template.bash" >> "$HOME/$CONFIG_FILE"
